@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Object</title>
+</head>
+<body>
+    <button id="btn" onclick="fun()">Click Me</button>
+    <script>
+        // Getting Information about file location Using Location Object
+        console.log(location.href);
+        console.log(location.pathname);
+        console.log(location.protocol);
+        console.log(location.port)
+
+        // redirect to any location
+
+        function fun() {
+            // method 1
+            //location = "https://www.google.com";
+
+            // method 2
+            //location.href = "https://amazon.in"
+
+            // method 3
+            //location.assign('https://www.yahoo.com');
+
+            // replace method clears the current tab history and redirect the given location location
+            //location.replace('https://www.flipkart.com');
+
+            // reload the web page
+
+            location.reload();
+        }
+    </script>
+</body>
+</html>
