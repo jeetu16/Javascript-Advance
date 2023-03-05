@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval and SetTimeout</title>
+    <style>
+        #btn-Stop {
+            background-color: darkslategrey;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: none;
+            position: fixed;
+            bottom: 5vh;
+            right: 40%;
+            left: 40%;
+            z-index: 10;
+        }
+        #btn-Stop:hover {
+            opacity: 0.8;
+        }
+        .center {
+           text-align: center;
+            padding: 0.5rem;
+            font-size: 1.5rem;
+            color: rgb(89, 89, 113);
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn-Stop">Stop</button>
+    <script>
+        // setTimeout = If you want to do once 
+        /*
+        let timeoutId = setTimeout(myFunction,0);
+        function myFunction() {
+            alert("Please Subscribe!")
+        }
+        let num = String(window.prompt("Enter a number "));
+        if (num % 2 == 0) {
+            clearTimeout(timeoutId);
+        }
+        */
+        // setInterval = If you want to do a task in every interval
+        let i = 1;
+        let stopInterval = setInterval( createPara,1000);
+        let btn_stop = document.getElementById("btn-Stop");
+
+        function createPara() {
+            let bdy = document.body;
+            let p = document.createElement("p");
+            p.innerHTML = `This is para ${i}`;
+            p.classList.add('center');
+            bdy.appendChild(p);
+            i++; 
+        }
+
+        btn_stop.addEventListener('click',function() {
+            clearInterval(stopInterval);
+        })
+
+
+    </script>
+</body>
+
+</html>
